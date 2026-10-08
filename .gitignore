@@ -1,0 +1,7 @@
+.lake/
+run/
+go-baseline/kv-go-server
+go-baseline/kv-check
+*.sqlite
+*.sqlite-wal
+*.sqlite-shm

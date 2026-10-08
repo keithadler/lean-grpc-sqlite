@@ -1,0 +1,31 @@
+[
+{"server": "lean (SQLite as shipped, -O0)", "scenario": "Get c=1", "rps": 9139, "count": 91386, "avgMs": 0.076, "p50Ms": 0.071, "p99Ms": 0.165, "errors": 0}
+,
+{"server": "lean (SQLite as shipped, -O0)", "scenario": "Get c=64, 1 conn", "rps": 64649, "count": 646502, "avgMs": 0.699, "p50Ms": 0.628, "p99Ms": 2.091, "errors": 62}
+,
+{"server": "lean (SQLite as shipped, -O0)", "scenario": "Get c=64, 8 conns", "rps": 53627, "count": 536250, "avgMs": 0.671, "p50Ms": 0.56, "p99Ms": 2.566, "errors": 8}
+,
+{"server": "lean (SQLite as shipped, -O0)", "scenario": "Put c=1", "rps": 8790, "count": 87904, "avgMs": 0.079, "p50Ms": 0.075, "p99Ms": 0.182, "errors": 1}
+,
+{"server": "lean (SQLite as shipped, -O0)", "scenario": "Put c=64, 8 conns", "rps": 38651, "count": 386500, "avgMs": 1.537, "p50Ms": 0.55, "p99Ms": 11.209, "errors": 60}
+,
+{"server": "lean (SQLite -O2)", "scenario": "Get c=1", "rps": 9663, "count": 96623, "avgMs": 0.07, "p50Ms": 0.067, "p99Ms": 0.142, "errors": 1}
+,
+{"server": "lean (SQLite -O2)", "scenario": "Get c=64, 1 conn", "rps": 62751, "count": 627503, "avgMs": 0.702, "p50Ms": 0.622, "p99Ms": 2.103, "errors": 21}
+,
+{"server": "lean (SQLite -O2)", "scenario": "Get c=64, 8 conns", "rps": 50459, "count": 504574, "avgMs": 0.693, "p50Ms": 0.571, "p99Ms": 2.761, "errors": 53}
+,
+{"server": "lean (SQLite -O2)", "scenario": "Put c=1", "rps": 8929, "count": 89288, "avgMs": 0.076, "p50Ms": 0.072, "p99Ms": 0.177, "errors": 1}
+,
+{"server": "lean (SQLite -O2)", "scenario": "Put c=64, 8 conns", "rps": 40975, "count": 409742, "avgMs": 1.375, "p50Ms": 0.712, "p99Ms": 8.943, "errors": 45}
+,
+{"server": "go (grpc-go, SQLite -O2)", "scenario": "Get c=1", "rps": 12108, "count": 121073, "avgMs": 0.049, "p50Ms": 0.045, "p99Ms": 0.129, "errors": 0}
+,
+{"server": "go (grpc-go, SQLite -O2)", "scenario": "Get c=64, 1 conn", "rps": 30895, "count": 308979, "avgMs": 1.456, "p50Ms": 1.284, "p99Ms": 4.059, "errors": 62}
+,
+{"server": "go (grpc-go, SQLite -O2)", "scenario": "Get c=64, 8 conns", "rps": 27761, "count": 277638, "avgMs": 1.451, "p50Ms": 1.105, "p99Ms": 6.9, "errors": 4}
+,
+{"server": "go (grpc-go, SQLite -O2)", "scenario": "Put c=1", "rps": 9534, "count": 95340, "avgMs": 0.061, "p50Ms": 0.056, "p99Ms": 0.173, "errors": 1}
+,
+{"server": "go (grpc-go, SQLite -O2)", "scenario": "Put c=64, 8 conns", "rps": 22176, "count": 221772, "avgMs": 2.136, "p50Ms": 1.304, "p99Ms": 15.96, "errors": 60}
+]

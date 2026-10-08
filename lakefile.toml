@@ -1,0 +1,20 @@
+name = "grpclean"
+version = "0.1.0"
+defaultTargets = ["kv-lean-server", "grpclean_tests"]
+
+# The revision LeanDB pins for Lean v4.33.0.
+[[require]]
+name = "leansqlite"
+git = "https://github.com/leanprover/leansqlite"
+rev = "0be4df908d1a8e75b58961041e2b4973692623df"
+
+[[lean_lib]]
+name = "GrpcLean"
+
+[[lean_exe]]
+name = "kv-lean-server"
+root = "Main"
+
+[[lean_exe]]
+name = "grpclean_tests"
+root = "Tests"

@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+package kv;
+
+option go_package = "lean-grpc-sqlite/go-baseline/kvpb";
+
+// A key-value store kept in SQLite: the service both servers implement, the Lean one and the Go baseline.
+service KV {
+  // Store a value under a key, replacing any value already there.
+  rpc Put(PutRequest) returns (PutReply);
+  // Read the value stored under a key.
+  rpc Get(GetRequest) returns (GetReply);
+}
+
+message PutRequest {
+  string key = 1;
+  bytes value = 2;
+}
+
+message PutReply {
+  bool ok = 1;
+}
+
+message GetRequest {
+  string key = 1;
+}
+
+message GetReply {
+  bool found = 1;
+  bytes value = 2;
+}
