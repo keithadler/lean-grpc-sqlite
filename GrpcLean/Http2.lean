@@ -278,19 +278,25 @@ partial def Conn.drain (c : Conn) : IO Conn := do
     c := { c with out := c.out ++ frame frameWindowUpdate 0 0 (u32 c.received), received := 0 }
   return c
 
-/-- Serve one connection until the client closes it or it fails. -/
+/-- Serve one connection until the client closes it or it fails.
+
+  Replies are written without waiting for each write to complete: libuv sends a socket's writes in the order they
+  were started, so the next read can begin at once. Waiting would cost a hand-off between the event-loop thread and a
+  worker on every call, which is most of a call's time when calls come one at a time. The last write is waited for
+  before the connection is closed. -/
 partial def serveConnection (sock : Socket.Client) (routes : String → Option Method) : Async Unit := do
   sock.noDelay
   let start := ourSettings ++ frame frameWindowUpdate 0 0 (u32 (connectionWindow - 65535))
-  sock.send start
-  let rec loop (c : Conn) : Async Unit := do
+  let first ← sock.native.send #[start]
+  let rec loop (c : Conn) (lastWrite : IO.Promise (Except IO.Error Unit)) : Async Unit := do
     let some chunk ← sock.recv? 65536 | return
     let c ← ({ c with buf := c.buf ++ chunk } : Conn).drain
-    if !c.out.isEmpty then sock.send c.out
+    let lastWrite ← if c.out.isEmpty then pure lastWrite else sock.native.send #[c.out]
     if c.closing then
+      discard <| Async.ofPromise (pure lastWrite)
       sock.shutdown
       return
-    loop { c with out := .empty }
-  loop { sock, routes }
+    loop { c with out := .empty } lastWrite
+  loop { sock, routes } first
 
 end GrpcLean.Http2

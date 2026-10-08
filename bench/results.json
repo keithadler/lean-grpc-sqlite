@@ -1,91 +1,91 @@
 [
-{"server": "lean (SQLite -O2)", "scenario": "Get c=1", "rep": 1, "rps": 9658, "count": 96583, "avgMs": 0.071, "p50Ms": 0.068, "p99Ms": 0.147, "errors": 1}
+{"server": "lean (SQLite -O2)", "scenario": "Get c=1", "rep": 1, "rps": 6153, "count": 61524, "avgMs": 0.099, "p50Ms": 0.09, "p99Ms": 0.225, "errors": 0}
 ,
-{"server": "go (grpc-go, SQLite -O2)", "scenario": "Get c=1", "rep": 1, "rps": 12507, "count": 125071, "avgMs": 0.047, "p50Ms": 0.044, "p99Ms": 0.122, "errors": 0}
+{"server": "go (grpc-go, SQLite -O2)", "scenario": "Get c=1", "rep": 1, "rps": 6557, "count": 65568, "avgMs": 0.09, "p50Ms": 0.083, "p99Ms": 0.235, "errors": 1}
 ,
-{"server": "lean (SQLite as shipped, -O0)", "scenario": "Get c=1", "rep": 1, "rps": 9525, "count": 95252, "avgMs": 0.072, "p50Ms": 0.069, "p99Ms": 0.145, "errors": 1}
+{"server": "lean (SQLite as shipped, -O0)", "scenario": "Get c=1", "rep": 1, "rps": 6425, "count": 64246, "avgMs": 0.095, "p50Ms": 0.088, "p99Ms": 0.2, "errors": 1}
 ,
-{"server": "lean (SQLite -O2)", "scenario": "Get c=64, 1 conn", "rep": 1, "rps": 60809, "count": 608102, "avgMs": 0.74, "p50Ms": 0.662, "p99Ms": 2.211, "errors": 40}
+{"server": "lean (SQLite -O2)", "scenario": "Get c=64, 1 conn", "rep": 1, "rps": 31030, "count": 310333, "avgMs": 1.455, "p50Ms": 1.24, "p99Ms": 4.641, "errors": 32}
 ,
-{"server": "go (grpc-go, SQLite -O2)", "scenario": "Get c=64, 1 conn", "rep": 1, "rps": 31738, "count": 317410, "avgMs": 1.419, "p50Ms": 1.248, "p99Ms": 4.205, "errors": 16}
+{"server": "go (grpc-go, SQLite -O2)", "scenario": "Get c=64, 1 conn", "rep": 1, "rps": 17877, "count": 178790, "avgMs": 2.658, "p50Ms": 2.393, "p99Ms": 7.705, "errors": 18}
 ,
-{"server": "lean (SQLite as shipped, -O0)", "scenario": "Get c=64, 1 conn", "rep": 1, "rps": 34063, "count": 340683, "avgMs": 1.422, "p50Ms": 1.228, "p99Ms": 4.391, "errors": 3}
+{"server": "lean (SQLite as shipped, -O0)", "scenario": "Get c=64, 1 conn", "rep": 1, "rps": 33518, "count": 335172, "avgMs": 1.4, "p50Ms": 1.207, "p99Ms": 4.27, "errors": 14}
 ,
-{"server": "lean (SQLite -O2)", "scenario": "Get c=64, 8 conns", "rep": 1, "rps": 28440, "count": 284535, "avgMs": 1.288, "p50Ms": 1.055, "p99Ms": 5.035, "errors": 63}
+{"server": "lean (SQLite -O2)", "scenario": "Get c=64, 8 conns", "rep": 1, "rps": 26481, "count": 264824, "avgMs": 1.354, "p50Ms": 1.092, "p99Ms": 5.671, "errors": 45}
 ,
-{"server": "go (grpc-go, SQLite -O2)", "scenario": "Get c=64, 8 conns", "rep": 1, "rps": 16529, "count": 165305, "avgMs": 2.468, "p50Ms": 1.798, "p99Ms": 13.375, "errors": 27}
+{"server": "go (grpc-go, SQLite -O2)", "scenario": "Get c=64, 8 conns", "rep": 1, "rps": 19803, "count": 198056, "avgMs": 2.059, "p50Ms": 1.557, "p99Ms": 9.574, "errors": 16}
 ,
-{"server": "lean (SQLite as shipped, -O0)", "scenario": "Get c=64, 8 conns", "rep": 1, "rps": 30416, "count": 304288, "avgMs": 1.208, "p50Ms": 0.985, "p99Ms": 4.664, "errors": 7}
+{"server": "lean (SQLite as shipped, -O0)", "scenario": "Get c=64, 8 conns", "rep": 1, "rps": 26918, "count": 269223, "avgMs": 1.354, "p50Ms": 0.982, "p99Ms": 7.733, "errors": 40}
 ,
-{"server": "lean (SQLite -O2)", "scenario": "Put c=1", "rep": 1, "rps": 6996, "count": 69963, "avgMs": 0.096, "p50Ms": 0.091, "p99Ms": 0.22, "errors": 1}
+{"server": "lean (SQLite -O2)", "scenario": "Put c=1", "rep": 1, "rps": 7824, "count": 78238, "avgMs": 0.078, "p50Ms": 0.071, "p99Ms": 0.182, "errors": 1}
 ,
-{"server": "go (grpc-go, SQLite -O2)", "scenario": "Put c=1", "rep": 1, "rps": 9161, "count": 91605, "avgMs": 0.064, "p50Ms": 0.059, "p99Ms": 0.178, "errors": 1}
+{"server": "go (grpc-go, SQLite -O2)", "scenario": "Put c=1", "rep": 1, "rps": 7868, "count": 78673, "avgMs": 0.075, "p50Ms": 0.068, "p99Ms": 0.216, "errors": 0}
 ,
-{"server": "lean (SQLite as shipped, -O0)", "scenario": "Put c=1", "rep": 1, "rps": 7729, "count": 77290, "avgMs": 0.087, "p50Ms": 0.083, "p99Ms": 0.208, "errors": 1}
+{"server": "lean (SQLite as shipped, -O0)", "scenario": "Put c=1", "rep": 1, "rps": 7309, "count": 73092, "avgMs": 0.085, "p50Ms": 0.077, "p99Ms": 0.213, "errors": 0}
 ,
-{"server": "lean (SQLite -O2)", "scenario": "Put c=64, 8 conns", "rep": 1, "rps": 33933, "count": 339361, "avgMs": 1.577, "p50Ms": 1.241, "p99Ms": 8.826, "errors": 17}
+{"server": "lean (SQLite -O2)", "scenario": "Put c=64, 8 conns", "rep": 1, "rps": 24782, "count": 247796, "avgMs": 2.171, "p50Ms": 1.57, "p99Ms": 11.881, "errors": 53}
 ,
-{"server": "go (grpc-go, SQLite -O2)", "scenario": "Put c=64, 8 conns", "rep": 1, "rps": 23198, "count": 231972, "avgMs": 1.976, "p50Ms": 1.275, "p99Ms": 12.525, "errors": 48}
+{"server": "go (grpc-go, SQLite -O2)", "scenario": "Put c=64, 8 conns", "rep": 1, "rps": 17817, "count": 178162, "avgMs": 2.692, "p50Ms": 1.802, "p99Ms": 15.329, "errors": 52}
 ,
-{"server": "lean (SQLite as shipped, -O0)", "scenario": "Put c=64, 8 conns", "rep": 1, "rps": 30769, "count": 307661, "avgMs": 1.927, "p50Ms": 1.343, "p99Ms": 12.24, "errors": 62}
+{"server": "lean (SQLite as shipped, -O0)", "scenario": "Put c=64, 8 conns", "rep": 1, "rps": 22501, "count": 225008, "avgMs": 2.633, "p50Ms": 1.576, "p99Ms": 21.535, "errors": 61}
 ,
-{"server": "go (grpc-go, SQLite -O2)", "scenario": "Get c=1", "rep": 2, "rps": 9717, "count": 97171, "avgMs": 0.061, "p50Ms": 0.056, "p99Ms": 0.165, "errors": 0}
+{"server": "go (grpc-go, SQLite -O2)", "scenario": "Get c=1", "rep": 2, "rps": 7084, "count": 70843, "avgMs": 0.085, "p50Ms": 0.075, "p99Ms": 0.266, "errors": 0}
 ,
-{"server": "lean (SQLite as shipped, -O0)", "scenario": "Get c=1", "rep": 2, "rps": 7537, "count": 75367, "avgMs": 0.091, "p50Ms": 0.085, "p99Ms": 0.212, "errors": 1}
+{"server": "lean (SQLite as shipped, -O0)", "scenario": "Get c=1", "rep": 2, "rps": 7112, "count": 71117, "avgMs": 0.087, "p50Ms": 0.079, "p99Ms": 0.217, "errors": 0}
 ,
-{"server": "lean (SQLite -O2)", "scenario": "Get c=1", "rep": 2, "rps": 7623, "count": 76225, "avgMs": 0.089, "p50Ms": 0.083, "p99Ms": 0.214, "errors": 0}
+{"server": "lean (SQLite -O2)", "scenario": "Get c=1", "rep": 2, "rps": 7354, "count": 73534, "avgMs": 0.084, "p50Ms": 0.077, "p99Ms": 0.209, "errors": 0}
 ,
-{"server": "go (grpc-go, SQLite -O2)", "scenario": "Get c=64, 1 conn", "rep": 2, "rps": 25649, "count": 256558, "avgMs": 1.755, "p50Ms": 1.571, "p99Ms": 5.043, "errors": 64}
+{"server": "go (grpc-go, SQLite -O2)", "scenario": "Get c=64, 1 conn", "rep": 2, "rps": 19253, "count": 192548, "avgMs": 2.478, "p50Ms": 2.233, "p99Ms": 7.161, "errors": 50}
 ,
-{"server": "lean (SQLite as shipped, -O0)", "scenario": "Get c=64, 1 conn", "rep": 2, "rps": 42989, "count": 429893, "avgMs": 1.132, "p50Ms": 1.023, "p99Ms": 3.15, "errors": 41}
+{"server": "lean (SQLite as shipped, -O0)", "scenario": "Get c=64, 1 conn", "rep": 2, "rps": 33269, "count": 332700, "avgMs": 1.474, "p50Ms": 1.31, "p99Ms": 4.163, "errors": 64}
 ,
-{"server": "lean (SQLite -O2)", "scenario": "Get c=64, 1 conn", "rep": 2, "rps": 45105, "count": 451042, "avgMs": 1.055, "p50Ms": 0.946, "p99Ms": 3.129, "errors": 38}
+{"server": "lean (SQLite -O2)", "scenario": "Get c=64, 1 conn", "rep": 2, "rps": 32754, "count": 327664, "avgMs": 1.459, "p50Ms": 1.29, "p99Ms": 4.145, "errors": 0}
 ,
-{"server": "go (grpc-go, SQLite -O2)", "scenario": "Get c=64, 8 conns", "rep": 2, "rps": 24869, "count": 248678, "avgMs": 1.581, "p50Ms": 1.223, "p99Ms": 7.039, "errors": 17}
+{"server": "go (grpc-go, SQLite -O2)", "scenario": "Get c=64, 8 conns", "rep": 2, "rps": 17830, "count": 178313, "avgMs": 2.314, "p50Ms": 1.753, "p99Ms": 10.575, "errors": 29}
 ,
-{"server": "lean (SQLite as shipped, -O0)", "scenario": "Get c=64, 8 conns", "rep": 2, "rps": 39093, "count": 390929, "avgMs": 0.933, "p50Ms": 0.778, "p99Ms": 3.527, "errors": 16}
+{"server": "lean (SQLite as shipped, -O0)", "scenario": "Get c=64, 8 conns", "rep": 2, "rps": 31255, "count": 312857, "avgMs": 1.159, "p50Ms": 0.946, "p99Ms": 4.736, "errors": 0}
 ,
-{"server": "lean (SQLite -O2)", "scenario": "Get c=64, 8 conns", "rep": 2, "rps": 40043, "count": 400511, "avgMs": 0.918, "p50Ms": 0.763, "p99Ms": 3.482, "errors": 4}
+{"server": "lean (SQLite -O2)", "scenario": "Get c=64, 8 conns", "rep": 2, "rps": 32100, "count": 321041, "avgMs": 1.129, "p50Ms": 0.918, "p99Ms": 4.646, "errors": 11}
 ,
-{"server": "go (grpc-go, SQLite -O2)", "scenario": "Put c=1", "rep": 2, "rps": 8407, "count": 84063, "avgMs": 0.071, "p50Ms": 0.06, "p99Ms": 0.23, "errors": 1}
+{"server": "go (grpc-go, SQLite -O2)", "scenario": "Put c=1", "rep": 2, "rps": 8649, "count": 86489, "avgMs": 0.068, "p50Ms": 0.062, "p99Ms": 0.186, "errors": 1}
 ,
-{"server": "lean (SQLite as shipped, -O0)", "scenario": "Put c=1", "rep": 2, "rps": 7446, "count": 74464, "avgMs": 0.091, "p50Ms": 0.086, "p99Ms": 0.213, "errors": 1}
+{"server": "lean (SQLite as shipped, -O0)", "scenario": "Put c=1", "rep": 2, "rps": 7884, "count": 78841, "avgMs": 0.079, "p50Ms": 0.073, "p99Ms": 0.174, "errors": 0}
 ,
-{"server": "lean (SQLite -O2)", "scenario": "Put c=1", "rep": 2, "rps": 7040, "count": 70400, "avgMs": 0.096, "p50Ms": 0.088, "p99Ms": 0.239, "errors": 1}
+{"server": "lean (SQLite -O2)", "scenario": "Put c=1", "rep": 2, "rps": 7885, "count": 78846, "avgMs": 0.078, "p50Ms": 0.071, "p99Ms": 0.188, "errors": 0}
 ,
-{"server": "go (grpc-go, SQLite -O2)", "scenario": "Put c=64, 8 conns", "rep": 2, "rps": 24187, "count": 241900, "avgMs": 1.966, "p50Ms": 1.307, "p99Ms": 11.398, "errors": 18}
+{"server": "go (grpc-go, SQLite -O2)", "scenario": "Put c=64, 8 conns", "rep": 2, "rps": 17809, "count": 178185, "avgMs": 2.672, "p50Ms": 1.677, "p99Ms": 18.887, "errors": 10}
 ,
-{"server": "lean (SQLite as shipped, -O0)", "scenario": "Put c=64, 8 conns", "rep": 2, "rps": 29850, "count": 298486, "avgMs": 1.96, "p50Ms": 1.381, "p99Ms": 12.366, "errors": 59}
+{"server": "lean (SQLite as shipped, -O0)", "scenario": "Put c=64, 8 conns", "rep": 2, "rps": 22298, "count": 222965, "avgMs": 2.641, "p50Ms": 1.567, "p99Ms": 21.844, "errors": 57}
 ,
-{"server": "lean (SQLite -O2)", "scenario": "Put c=64, 8 conns", "rep": 2, "rps": 32669, "count": 326678, "avgMs": 1.636, "p50Ms": 1.292, "p99Ms": 9.115, "errors": 63}
+{"server": "lean (SQLite -O2)", "scenario": "Put c=64, 8 conns", "rep": 2, "rps": 25456, "count": 254549, "avgMs": 2.069, "p50Ms": 1.534, "p99Ms": 11.276, "errors": 60}
 ,
-{"server": "lean (SQLite as shipped, -O0)", "scenario": "Get c=1", "rep": 3, "rps": 7575, "count": 75752, "avgMs": 0.089, "p50Ms": 0.084, "p99Ms": 0.219, "errors": 1}
+{"server": "lean (SQLite as shipped, -O0)", "scenario": "Get c=1", "rep": 3, "rps": 6799, "count": 67989, "avgMs": 0.091, "p50Ms": 0.082, "p99Ms": 0.245, "errors": 1}
 ,
-{"server": "lean (SQLite -O2)", "scenario": "Get c=1", "rep": 3, "rps": 7369, "count": 73692, "avgMs": 0.092, "p50Ms": 0.087, "p99Ms": 0.218, "errors": 1}
+{"server": "lean (SQLite -O2)", "scenario": "Get c=1", "rep": 3, "rps": 7251, "count": 72514, "avgMs": 0.085, "p50Ms": 0.078, "p99Ms": 0.196, "errors": 1}
 ,
-{"server": "go (grpc-go, SQLite -O2)", "scenario": "Get c=1", "rep": 3, "rps": 9418, "count": 94176, "avgMs": 0.063, "p50Ms": 0.058, "p99Ms": 0.176, "errors": 1}
+{"server": "go (grpc-go, SQLite -O2)", "scenario": "Get c=1", "rep": 3, "rps": 7329, "count": 73284, "avgMs": 0.082, "p50Ms": 0.074, "p99Ms": 0.229, "errors": 0}
 ,
-{"server": "lean (SQLite as shipped, -O0)", "scenario": "Get c=64, 1 conn", "rep": 3, "rps": 42148, "count": 421480, "avgMs": 1.161, "p50Ms": 1.046, "p99Ms": 3.205, "errors": 64}
+{"server": "lean (SQLite as shipped, -O0)", "scenario": "Get c=64, 1 conn", "rep": 3, "rps": 30376, "count": 303754, "avgMs": 1.632, "p50Ms": 1.463, "p99Ms": 4.573, "errors": 35}
 ,
-{"server": "lean (SQLite -O2)", "scenario": "Get c=64, 1 conn", "rep": 3, "rps": 44168, "count": 441686, "avgMs": 1.085, "p50Ms": 0.972, "p99Ms": 3.126, "errors": 35}
+{"server": "lean (SQLite -O2)", "scenario": "Get c=64, 1 conn", "rep": 3, "rps": 30308, "count": 303098, "avgMs": 1.544, "p50Ms": 1.273, "p99Ms": 5.357, "errors": 13}
 ,
-{"server": "go (grpc-go, SQLite -O2)", "scenario": "Get c=64, 1 conn", "rep": 3, "rps": 23991, "count": 239948, "avgMs": 1.944, "p50Ms": 1.674, "p99Ms": 5.944, "errors": 9}
+{"server": "go (grpc-go, SQLite -O2)", "scenario": "Get c=64, 1 conn", "rep": 3, "rps": 29877, "count": 298786, "avgMs": 1.502, "p50Ms": 1.344, "p99Ms": 4.42, "errors": 40}
 ,
-{"server": "lean (SQLite as shipped, -O0)", "scenario": "Get c=64, 8 conns", "rep": 3, "rps": 37691, "count": 376933, "avgMs": 0.996, "p50Ms": 0.824, "p99Ms": 3.691, "errors": 14}
+{"server": "lean (SQLite as shipped, -O0)", "scenario": "Get c=64, 8 conns", "rep": 3, "rps": 47640, "count": 476377, "avgMs": 0.748, "p50Ms": 0.634, "p99Ms": 2.851, "errors": 9}
 ,
-{"server": "lean (SQLite -O2)", "scenario": "Get c=64, 8 conns", "rep": 3, "rps": 39511, "count": 395476, "avgMs": 0.928, "p50Ms": 0.776, "p99Ms": 3.496, "errors": 22}
+{"server": "lean (SQLite -O2)", "scenario": "Get c=64, 8 conns", "rep": 3, "rps": 48278, "count": 482918, "avgMs": 0.721, "p50Ms": 0.617, "p99Ms": 2.676, "errors": 27}
 ,
-{"server": "go (grpc-go, SQLite -O2)", "scenario": "Get c=64, 8 conns", "rep": 3, "rps": 25260, "count": 252608, "avgMs": 1.572, "p50Ms": 1.206, "p99Ms": 7.064, "errors": 16}
+{"server": "go (grpc-go, SQLite -O2)", "scenario": "Get c=64, 8 conns", "rep": 3, "rps": 30557, "count": 305559, "avgMs": 1.287, "p50Ms": 0.991, "p99Ms": 5.732, "errors": 37}
 ,
-{"server": "lean (SQLite as shipped, -O0)", "scenario": "Put c=1", "rep": 3, "rps": 7603, "count": 76031, "avgMs": 0.089, "p50Ms": 0.085, "p99Ms": 0.206, "errors": 1}
+{"server": "lean (SQLite as shipped, -O0)", "scenario": "Put c=1", "rep": 3, "rps": 10198, "count": 101977, "avgMs": 0.06, "p50Ms": 0.057, "p99Ms": 0.094, "errors": 1}
 ,
-{"server": "lean (SQLite -O2)", "scenario": "Put c=1", "rep": 3, "rps": 7235, "count": 72347, "avgMs": 0.094, "p50Ms": 0.087, "p99Ms": 0.218, "errors": 1}
+{"server": "lean (SQLite -O2)", "scenario": "Put c=1", "rep": 3, "rps": 9994, "count": 99938, "avgMs": 0.061, "p50Ms": 0.058, "p99Ms": 0.096, "errors": 0}
 ,
-{"server": "go (grpc-go, SQLite -O2)", "scenario": "Put c=1", "rep": 3, "rps": 9351, "count": 93504, "avgMs": 0.063, "p50Ms": 0.057, "p99Ms": 0.169, "errors": 1}
+{"server": "go (grpc-go, SQLite -O2)", "scenario": "Put c=1", "rep": 3, "rps": 10570, "count": 105694, "avgMs": 0.055, "p50Ms": 0.051, "p99Ms": 0.107, "errors": 0}
 ,
-{"server": "lean (SQLite as shipped, -O0)", "scenario": "Put c=64, 8 conns", "rep": 3, "rps": 29422, "count": 294198, "avgMs": 1.978, "p50Ms": 1.373, "p99Ms": 12.121, "errors": 52}
+{"server": "lean (SQLite as shipped, -O0)", "scenario": "Put c=64, 8 conns", "rep": 3, "rps": 33240, "count": 332379, "avgMs": 1.784, "p50Ms": 0.718, "p99Ms": 13.381, "errors": 56}
 ,
-{"server": "lean (SQLite -O2)", "scenario": "Put c=64, 8 conns", "rep": 3, "rps": 32387, "count": 323868, "avgMs": 1.638, "p50Ms": 1.29, "p99Ms": 8.798, "errors": 20}
+{"server": "lean (SQLite -O2)", "scenario": "Put c=64, 8 conns", "rep": 3, "rps": 38379, "count": 383765, "avgMs": 1.435, "p50Ms": 0.89, "p99Ms": 9.18, "errors": 53}
 ,
-{"server": "go (grpc-go, SQLite -O2)", "scenario": "Put c=64, 8 conns", "rep": 3, "rps": 23241, "count": 232396, "avgMs": 2.043, "p50Ms": 1.335, "p99Ms": 11.808, "errors": 51}
+{"server": "go (grpc-go, SQLite -O2)", "scenario": "Put c=64, 8 conns", "rep": 3, "rps": 26266, "count": 262643, "avgMs": 1.858, "p50Ms": 0.99, "p99Ms": 14.506, "errors": 62}
 ]

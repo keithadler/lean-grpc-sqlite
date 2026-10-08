@@ -1,0 +1,91 @@
+[
+{"server": "lean, previous", "scenario": "Get c=1", "rep": 1, "rps": 4083, "count": 40833, "avgMs": 0.169, "p50Ms": 0.133, "p99Ms": 0.716, "errors": 1}
+,
+{"server": "go (grpc-go)", "scenario": "Get c=1", "rep": 1, "rps": 4990, "count": 49899, "avgMs": 0.12, "p50Ms": 0.105, "p99Ms": 0.337, "errors": 0}
+,
+{"server": "lean, new (writes not awaited)", "scenario": "Get c=1", "rep": 1, "rps": 5243, "count": 52426, "avgMs": 0.118, "p50Ms": 0.108, "p99Ms": 0.271, "errors": 0}
+,
+{"server": "lean, previous", "scenario": "Get c=64, 1 conn", "rep": 1, "rps": 29783, "count": 297870, "avgMs": 1.608, "p50Ms": 1.432, "p99Ms": 4.52, "errors": 25}
+,
+{"server": "go (grpc-go)", "scenario": "Get c=64, 1 conn", "rep": 1, "rps": 19814, "count": 198156, "avgMs": 2.409, "p50Ms": 2.18, "p99Ms": 6.991, "errors": 15}
+,
+{"server": "lean, new (writes not awaited)", "scenario": "Get c=64, 1 conn", "rep": 1, "rps": 39721, "count": 397261, "avgMs": 1.182, "p50Ms": 1.021, "p99Ms": 3.807, "errors": 33}
+,
+{"server": "lean, previous", "scenario": "Get c=64, 8 conns", "rep": 1, "rps": 33396, "count": 334669, "avgMs": 1.114, "p50Ms": 0.863, "p99Ms": 4.874, "errors": 34}
+,
+{"server": "go (grpc-go)", "scenario": "Get c=64, 8 conns", "rep": 1, "rps": 19972, "count": 199755, "avgMs": 2.056, "p50Ms": 1.549, "p99Ms": 9.54, "errors": 28}
+,
+{"server": "lean, new (writes not awaited)", "scenario": "Get c=64, 8 conns", "rep": 1, "rps": 27118, "count": 271242, "avgMs": 1.352, "p50Ms": 1.063, "p99Ms": 5.897, "errors": 17}
+,
+{"server": "lean, previous", "scenario": "Put c=1", "rep": 1, "rps": 5932, "count": 59318, "avgMs": 0.113, "p50Ms": 0.104, "p99Ms": 0.291, "errors": 1}
+,
+{"server": "go (grpc-go)", "scenario": "Put c=1", "rep": 1, "rps": 8596, "count": 85956, "avgMs": 0.068, "p50Ms": 0.063, "p99Ms": 0.165, "errors": 0}
+,
+{"server": "lean, new (writes not awaited)", "scenario": "Put c=1", "rep": 1, "rps": 7364, "count": 73639, "avgMs": 0.084, "p50Ms": 0.074, "p99Ms": 0.233, "errors": 1}
+,
+{"server": "lean, previous", "scenario": "Put c=64, 8 conns", "rep": 1, "rps": 25949, "count": 259480, "avgMs": 2.0, "p50Ms": 1.496, "p99Ms": 10.499, "errors": 50}
+,
+{"server": "go (grpc-go)", "scenario": "Put c=64, 8 conns", "rep": 1, "rps": 19019, "count": 190185, "avgMs": 2.463, "p50Ms": 1.691, "p99Ms": 13.209, "errors": 63}
+,
+{"server": "lean, new (writes not awaited)", "scenario": "Put c=64, 8 conns", "rep": 1, "rps": 28486, "count": 284864, "avgMs": 1.828, "p50Ms": 1.384, "p99Ms": 10.065, "errors": 34}
+,
+{"server": "go (grpc-go)", "scenario": "Get c=1", "rep": 2, "rps": 8159, "count": 81592, "avgMs": 0.074, "p50Ms": 0.065, "p99Ms": 0.226, "errors": 0}
+,
+{"server": "lean, new (writes not awaited)", "scenario": "Get c=1", "rep": 2, "rps": 8079, "count": 80787, "avgMs": 0.077, "p50Ms": 0.07, "p99Ms": 0.166, "errors": 0}
+,
+{"server": "lean, previous", "scenario": "Get c=1", "rep": 2, "rps": 7083, "count": 70828, "avgMs": 0.095, "p50Ms": 0.089, "p99Ms": 0.205, "errors": 0}
+,
+{"server": "go (grpc-go)", "scenario": "Get c=64, 1 conn", "rep": 2, "rps": 21109, "count": 211091, "avgMs": 2.298, "p50Ms": 2.07, "p99Ms": 6.61, "errors": 63}
+,
+{"server": "lean, new (writes not awaited)", "scenario": "Get c=64, 1 conn", "rep": 2, "rps": 36899, "count": 368982, "avgMs": 1.296, "p50Ms": 1.133, "p99Ms": 3.827, "errors": 25}
+,
+{"server": "lean, previous", "scenario": "Get c=64, 1 conn", "rep": 2, "rps": 33874, "count": 338749, "avgMs": 1.403, "p50Ms": 1.228, "p99Ms": 3.971, "errors": 13}
+,
+{"server": "go (grpc-go)", "scenario": "Get c=64, 8 conns", "rep": 2, "rps": 18724, "count": 187247, "avgMs": 2.212, "p50Ms": 1.658, "p99Ms": 10.931, "errors": 18}
+,
+{"server": "lean, new (writes not awaited)", "scenario": "Get c=64, 8 conns", "rep": 2, "rps": 31752, "count": 317487, "avgMs": 1.152, "p50Ms": 0.935, "p99Ms": 4.763, "errors": 32}
+,
+{"server": "lean, previous", "scenario": "Get c=64, 8 conns", "rep": 2, "rps": 30296, "count": 302950, "avgMs": 1.229, "p50Ms": 0.983, "p99Ms": 5.003, "errors": 55}
+,
+{"server": "go (grpc-go)", "scenario": "Put c=1", "rep": 2, "rps": 8431, "count": 84311, "avgMs": 0.07, "p50Ms": 0.064, "p99Ms": 0.164, "errors": 1}
+,
+{"server": "lean, new (writes not awaited)", "scenario": "Put c=1", "rep": 2, "rps": 7802, "count": 78018, "avgMs": 0.079, "p50Ms": 0.071, "p99Ms": 0.192, "errors": 0}
+,
+{"server": "lean, previous", "scenario": "Put c=1", "rep": 2, "rps": 6622, "count": 66216, "avgMs": 0.101, "p50Ms": 0.094, "p99Ms": 0.221, "errors": 1}
+,
+{"server": "go (grpc-go)", "scenario": "Put c=64, 8 conns", "rep": 2, "rps": 18922, "count": 189225, "avgMs": 2.484, "p50Ms": 1.708, "p99Ms": 13.534, "errors": 15}
+,
+{"server": "lean, new (writes not awaited)", "scenario": "Put c=64, 8 conns", "rep": 2, "rps": 25250, "count": 252526, "avgMs": 2.122, "p50Ms": 1.54, "p99Ms": 11.246, "errors": 27}
+,
+{"server": "lean, previous", "scenario": "Put c=64, 8 conns", "rep": 2, "rps": 25909, "count": 259081, "avgMs": 2.024, "p50Ms": 1.561, "p99Ms": 10.346, "errors": 39}
+,
+{"server": "lean, new (writes not awaited)", "scenario": "Get c=1", "rep": 3, "rps": 7816, "count": 78155, "avgMs": 0.079, "p50Ms": 0.072, "p99Ms": 0.162, "errors": 0}
+,
+{"server": "lean, previous", "scenario": "Get c=1", "rep": 3, "rps": 6787, "count": 67866, "avgMs": 0.099, "p50Ms": 0.093, "p99Ms": 0.212, "errors": 1}
+,
+{"server": "go (grpc-go)", "scenario": "Get c=1", "rep": 3, "rps": 8102, "count": 81015, "avgMs": 0.074, "p50Ms": 0.067, "p99Ms": 0.185, "errors": 1}
+,
+{"server": "lean, new (writes not awaited)", "scenario": "Get c=64, 1 conn", "rep": 3, "rps": 35923, "count": 359372, "avgMs": 1.324, "p50Ms": 1.136, "p99Ms": 4.054, "errors": 62}
+,
+{"server": "lean, previous", "scenario": "Get c=64, 1 conn", "rep": 3, "rps": 32885, "count": 328845, "avgMs": 1.475, "p50Ms": 1.286, "p99Ms": 4.235, "errors": 34}
+,
+{"server": "go (grpc-go)", "scenario": "Get c=64, 1 conn", "rep": 3, "rps": 19393, "count": 193975, "avgMs": 2.485, "p50Ms": 2.203, "p99Ms": 7.417, "errors": 15}
+,
+{"server": "lean, new (writes not awaited)", "scenario": "Get c=64, 8 conns", "rep": 3, "rps": 23995, "count": 239973, "avgMs": 1.499, "p50Ms": 1.152, "p99Ms": 6.989, "errors": 32}
+,
+{"server": "lean, previous", "scenario": "Get c=64, 8 conns", "rep": 3, "rps": 26338, "count": 263654, "avgMs": 1.411, "p50Ms": 1.145, "p99Ms": 5.618, "errors": 36}
+,
+{"server": "go (grpc-go)", "scenario": "Get c=64, 8 conns", "rep": 3, "rps": 16998, "count": 170008, "avgMs": 2.355, "p50Ms": 1.797, "p99Ms": 10.915, "errors": 9}
+,
+{"server": "lean, new (writes not awaited)", "scenario": "Put c=1", "rep": 3, "rps": 5789, "count": 57887, "avgMs": 0.107, "p50Ms": 0.095, "p99Ms": 0.282, "errors": 0}
+,
+{"server": "lean, previous", "scenario": "Put c=1", "rep": 3, "rps": 5512, "count": 55121, "avgMs": 0.12, "p50Ms": 0.112, "p99Ms": 0.259, "errors": 1}
+,
+{"server": "go (grpc-go)", "scenario": "Put c=1", "rep": 3, "rps": 6164, "count": 61636, "avgMs": 0.096, "p50Ms": 0.085, "p99Ms": 0.253, "errors": 0}
+,
+{"server": "lean, new (writes not awaited)", "scenario": "Put c=64, 8 conns", "rep": 3, "rps": 23421, "count": 234209, "avgMs": 2.201, "p50Ms": 1.655, "p99Ms": 11.293, "errors": 48}
+,
+{"server": "lean, previous", "scenario": "Put c=64, 8 conns", "rep": 3, "rps": 23013, "count": 230232, "avgMs": 2.271, "p50Ms": 1.722, "p99Ms": 11.59, "errors": 27}
+,
+{"server": "go (grpc-go)", "scenario": "Put c=64, 8 conns", "rep": 3, "rps": 16167, "count": 161717, "avgMs": 2.896, "p50Ms": 1.971, "p99Ms": 15.411, "errors": 20}
+]

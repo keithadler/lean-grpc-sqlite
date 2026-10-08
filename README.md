@@ -45,24 +45,30 @@ Both servers use SQLite the same way: WAL, `synchronous=NORMAL`, a 5-second busy
 ### Results
 
 Apple M3 (8 cores), macOS, loopback, ghz on the same machine. Median of three runs, with the range in brackets, in
-requests per second; p99 latency is the median run's.
+requests per second; p99 latency is the median run's. The machine was busy (other work raised its load average), so
+compare the columns of one table, not numbers across runs.
 
 | Scenario | Lean (SQLite -O2) | Go (grpc-go, SQLite -O2) | Lean (SQLite as leansqlite ships it) |
 |---|---:|---:|---:|
-| `Get`, 1 at a time | 7,623 [7,369–9,658], p99 0.21 ms | **9,717** [9,418–12,507], p99 0.17 ms | 7,575 [7,537–9,525], p99 0.22 ms |
-| `Get`, 64 concurrent, 1 connection | **45,105** [44,168–60,809], p99 3.1 ms | 25,649 [23,991–31,738], p99 5.0 ms | 42,148 [34,063–42,989], p99 3.2 ms |
-| `Get`, 64 concurrent, 8 connections | **39,511** [28,440–40,043], p99 3.5 ms | 24,869 [16,529–25,260], p99 7.0 ms | 37,691 [30,416–39,093], p99 3.7 ms |
-| `Put`, 1 at a time | 7,040 [6,996–7,235], p99 0.24 ms | **9,161** [8,407–9,351], p99 0.18 ms | 7,603 [7,446–7,729], p99 0.21 ms |
-| `Put`, 64 concurrent, 8 connections | **32,669** [32,387–33,933], p99 9.1 ms | 23,241 [23,198–24,187], p99 11.8 ms | 29,850 [29,422–30,769], p99 12.4 ms |
+| `Get`, 1 at a time | **7,251** [6,153–7,354], p99 0.20 ms | 7,084 [6,557–7,329], p99 0.27 ms | 6,799 [6,425–7,112], p99 0.25 ms |
+| `Get`, 64 concurrent, 1 connection | **31,030** [30,308–32,754], p99 4.6 ms | 19,253 [17,877–29,877], p99 7.2 ms | 33,269 [30,376–33,518], p99 4.2 ms |
+| `Get`, 64 concurrent, 8 connections | **32,100** [26,481–48,278], p99 4.6 ms | 19,803 [17,830–30,557], p99 9.6 ms | 31,255 [26,918–47,640], p99 4.7 ms |
+| `Put`, 1 at a time | 7,885 [7,824–9,994], p99 0.19 ms | **8,649** [7,868–10,570], p99 0.19 ms | 7,884 [7,309–10,198], p99 0.17 ms |
+| `Put`, 64 concurrent, 8 connections | **25,456** [24,782–38,379], p99 11.3 ms | 17,817 [17,809–26,266], p99 15.3 ms | 22,501 [22,298–33,240], p99 21.5 ms |
 
 `bench/results.json` has every run. Two earlier single passes (`bench/results-run1.json`, `results-run2.json`, run
-one server after another) swung by up to a factor of two on the same scenario, which is why the method changed.
+one server after another, with the first version of the server) swung by up to a factor of two on the same scenario,
+which is why the method changed.
 
 ### What the numbers say
 
-- **One call at a time, Go is faster**, answering about 30% more calls: its HTTP/2 and protobuf code is mature and heavily
-  optimized, and this one is a first version.
-- **Under load, the Lean server answers 1.4 to 1.8 times as many calls.** That is mostly design, not language. It
+- **One call at a time, it is close:** reads are even, and Go answers about 10% more writes. The first version of this
+  server was 20 to 40% behind here. Profiling showed its time went almost entirely to threads waiting on each
+  other, not to its own code: Lean's async I/O runs on an event-loop thread, and every `await` is a hand-off between
+  that thread and a worker. It waited for each reply's write to finish before reading the next request; now it
+  starts the write and reads at once (libuv sends a socket's writes in order). Head to head in one interleaved run,
+  that took one-at-a-time reads from 6,787 to 7,816 and writes from 5,932 to 7,364 (`bench/results-ab.json`).
+- **Under load, the Lean server answers 1.4 to 1.7 times as many calls.** That is mostly design, not language. It
   handles everything one read of the socket delivers, runs those calls, and sends every reply in **one** write, so 64
   calls in flight cost a few system calls instead of dozens. The Go server is idiomatic grpc-go and `database/sql`
   with default settings: a goroutine and its own writes per call, and a connection pool between the calls and
