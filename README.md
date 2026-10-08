@@ -59,7 +59,7 @@ one server after another) swung by up to a factor of two on the same scenario, w
 
 ### What the numbers say
 
-- **One call at a time, Go is faster**, by about a quarter: its HTTP/2 and protobuf code is mature and heavily
+- **One call at a time, Go is faster**, answering about 30% more calls: its HTTP/2 and protobuf code is mature and heavily
   optimized, and this one is a first version.
 - **Under load, the Lean server answers 1.4 to 1.8 times as many calls.** That is mostly design, not language. It
   handles everything one read of the socket delivers, runs those calls, and sends every reply in **one** write, so 64
