@@ -14,7 +14,7 @@ database is written here in Lean:
 | `GrpcLean/Kv.lean` | The `kv.KV` service (`Put`, `Get`) on SQLite, through [leansqlite](https://github.com/leanprover/leansqlite). |
 | `Main.lean` | The server: one task per connection, each with its own SQLite connection. |
 | `go-baseline/` | The same service in Go: grpc-go, `database/sql` and mattn/go-sqlite3. `cmd/check` is a correctness checker that drives either server with a real gRPC client. |
-| `bench/run.sh` | The benchmark. |
+| `bench/build-servers.sh`, `bench/run.sh` | Build the servers, and run the benchmark. |
 
 ## Building and checking
 
@@ -32,7 +32,8 @@ multiplexed on one connection. Both servers pass all of it.
 
 ## The benchmark
 
-`bench/run.sh` (needs [ghz](https://ghz.sh) and Go) starts all three servers on fresh SQLite files, preloads 10,000
+`bench/build-servers.sh` builds the three servers (needs elan and Go), then `bench/run.sh` (needs
+[ghz](https://ghz.sh)) starts all three on fresh SQLite files, preloads 10,000
 keys with 64-byte values, then runs reads (`Get` of a random existing key) and writes (`Put` of a random key) with
 ghz. Each run is a 2-second warm-up, thrown away, and 10 seconds measured. Every scenario runs three times on every
 server, interleaved so that each round starts with a different server: the machine was not idle (its load average
@@ -75,8 +76,11 @@ one server after another) swung by up to a factor of two on the same scenario, w
 ### A finding along the way
 
 leansqlite compiles SQLite with no `-O` flag, so at `-O0` (see `.lake/packages/leansqlite/.lake/build/sqlite3.o.trace`:
-`cc -c ... sqlite3.c -fPIC ...`). Every project that uses it, LeanDB included, runs an unoptimized SQLite. The
-`-O2` builds here patch the local copy of its lakefile; `lake update` undoes that.
+`cc -c ... sqlite3.c -fPIC ...`). Every project that uses it, LeanDB included, runs an unoptimized SQLite.
+`bench/build-servers.sh` builds the `-O2` variant by patching the local leansqlite checkout for one build and
+putting it back. The cause is Lake's `buildO`, which adds no optimization flag: reported as
+[leanprover/leansqlite#54](https://github.com/leanprover/leansqlite/issues/54) and
+[leanprover/lean4#15548](https://github.com/leanprover/lean4/issues/15548).
 
 ## What it does not do
 
