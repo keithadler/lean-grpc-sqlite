@@ -68,7 +68,7 @@ which is why the method changed.
   that thread and a worker. It waited for each reply's write to finish before reading the next request; now it
   starts the write and reads at once (libuv sends a socket's writes in order). Head to head in one interleaved run,
   that took one-at-a-time reads from 6,787 to 7,816 and writes from 5,932 to 7,364 (`bench/results-ab.json`).
-- **Under load, the Lean server answers 1.4 to 1.7 times as many calls.** That is mostly design, not language. It
+- **Under load, the Lean server answers 1.4 to 1.6 times as many calls.** That is mostly design, not language. It
   handles everything one read of the socket delivers, runs those calls, and sends every reply in **one** write, so 64
   calls in flight cost a few system calls instead of dozens. The Go server is idiomatic grpc-go and `database/sql`
   with default settings: a goroutine and its own writes per call, and a connection pool between the calls and
