@@ -19,7 +19,7 @@ database is written here in Lean:
 ## Building and checking
 
 ```bash
-lake build                                        # the server and the tests (Lean v4.33.0)
+lake build                                        # the server and the tests (Lean v4.36.0)
 ./.lake/build/bin/grpclean_tests                  # protobuf, HPACK (RFC 7541 Appendix C), HTTP/2 framing and flow control
 ./.lake/build/bin/kv-lean-server --addr 127.0.0.1:50051 --db kv.sqlite
 (cd go-baseline && go build -o kv-check ./cmd/check && ./kv-check -addr 127.0.0.1:50051)
